@@ -1,47 +1,65 @@
-# Job Advertisement Skill and Sentiment Analysis
+# Job Advertisement Skill & Sentiment Analyzer
 
-## Project Overview
+An NLP analysis of working student job advertisements in Germany,
+extracting the most in-demand skills, tools, and language patterns
+from real job descriptions.
 
-This project analyzes six working student job advertisements related to IT, data, automation, and business related roles. The goal of the project is to identify common words, skills, tools, and the general sentiment used in job advertisements.
+> Built out of a personal need: I wanted to understand exactly what
+> skills companies are looking for in NLP and data-related roles —
+> so I analyzed the job ads themselves.
 
-## Dataset
+## What I found
 
-The dataset was collected manually from online job advertisements. Each job ad includes the job title, company name, job description, and job link.
+**Most demanded technical skills:**
+Python, SQL, Power BI, Tableau, Excel, AI, automation, process mining
 
-The original data is stored in:
+**Most common themes:**
+data, business processes, project work, customer orientation,
+communication, analytical thinking
 
-- job-ads.xlsx
-
-The processed data is stored in:
-
-- processed_job_ads.xlsx
+**Sentiment:** All 6 job ads were positive or neutral in tone —
+consistent with the persuasive nature of job postings.
 
 ## Methods
 
-The job descriptions were analyzed using Python and basic NLP techniques.
+**Preprocessing:**
+- Lowercasing, punctuation removal
+- Tokenization, stop word removal, lemmatization
 
-The preprocessing steps included:
+**Analysis:**
+- Word frequency analysis
+- Skill & tool frequency extraction
+- Sentiment analysis (VADER / TextBlob)
 
-- converting text to lowercase
-- removing punctuation and symbols
-- tokenization
-- stop word removal
-- lemmatization
+## Dataset
 
-After preprocessing, the project included:
+Manually collected from real German job portals.
+6 working student job ads across IT, data, automation,
+and business roles.
 
-- word frequency analysis
-- skill and tool frequency analysis
-- sentiment analysis
+| File | Description |
+| `job-ads.xlsx` | Raw collected job advertisements |
+| `processed_job_ads.xlsx` | Cleaned and processed data |
+| `analysis.ipynb` | Full analysis notebook |
 
-## Results
+## Tech stack
 
-The word frequency analysis showed that the most common words were mainly related to IT, data science, business processes, and projects. Frequent words included data, customer, business, process, project, management, technical, experience, tool, team, analysis, and programming.
+- Python
+- pandas
+- NLTK / spaCy
+- VADER or TextBlob (sentiment)
+- Matplotlib / seaborn (visualization)
 
-The skill frequency analysis showed that the job ads included technical skills and tools such as Python, SQL, Power BI, Tableau, Excel, AI, automation, and process mining. The results also showed that communication, customer related tasks, business understanding, and project work were important in the selected job ads.
+## Run locally
 
-The sentiment analysis showed that the selected job advertisements were either positive or neutral. No job advertisement was classified as negative. This is expected because job advertisements are usually written in a professional and attractive way to encourage applicants to apply.
+git clone https://github.com/tamarataha/job-ad-skill-analyzer
+cd job-ad-skill-analyzer
+pip install -r requirements.txt
+jupyter notebook analysis.ipynb
 
-## Conclusion
+## Why this project
 
-Overall, the analysis suggests that working student roles in IT, data, automation, and business related fields often require a combination of technical knowledge, analytical thinking, communication skills, customer orientation, and business understanding
+I built this while actively applying for working student roles in
+Germany. Instead of guessing what skills to highlight, I used NLP
+to extract patterns from actual job postings — turning the job
+search itself into an NLP problem.
